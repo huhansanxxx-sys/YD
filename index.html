@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desi Connections | Premium Indian Dating</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E53E3E',
+                        secondary: '#6366F1',
+                        accent: '#1E1E2E',
+                        dark: '#121212',
+                        light: '#2D2D3F',
+                        textLight: '#F3F4F6',
+                        textMuted: '#A5B4FC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            }
+            .card-hover {
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            }
+            .gradient-overlay {
+                background: linear-gradient(to right, rgba(229, 62, 62, 0.9), rgba(99, 102, 241, 0.85));
+            }
+            .section-padding {
+                padding-top: clamp(4rem, 10vh, 6rem);
+                padding-bottom: clamp(4rem, 10vh, 6rem);
+            }
+            .animate-fade-in {
+                animation: fadeIn 0.8s ease-in forwards;
+                opacity: 0;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .img-zoom {
+                transition: transform 0.7s ease;
+            }
+            .img-zoom:hover {
+                transform: scale(1.03);
+            }
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            /* 图片容器样式 */
+            .portrait-img-container {
+                aspect-ratio: 3/4;
+            }
+            .landscape-img-container {
+                aspect-ratio: 4/3;
+            }
+            .square-img-container {
+                aspect-ratio: 1/1;
+            }
+            .portrait-tall-container {
+                aspect-ratio: 9/16;
+            }
+            /* 头像容器 */
+            .avatar-container {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+            }
+            /* 通用图片样式 */
+            .full-image {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+            .full-contain-image {
+                object-fit: contain;
+                background-color: rgba(0, 0, 0, 0.1);
+                width: 100%;
+                height: 100%;
+            }
+            /* 头像图片样式 */
+            .avatar-image {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.3s ease;
+            }
+            .avatar-image:hover {
+                transform: scale(1.05);
+            }
+            /* 分隔线样式 */
+            .section-divider {
+                height: 4px;
+                width: 60px;
+                margin: 1rem auto 2rem;
+                border-radius: 2px;
+                background: linear-gradient(to right, var(--tw-gradient-stops));
+            }
+        }
+    </style>
+</head>
+<body class="bg-accent text-textLight font-sans antialiased">
+    <!-- Header Navigation -->
+    <nav class="fixed w-full bg-dark/90 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary">
+                        Desi<span class="text-secondary">Connections</span>
+                    </a>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-1 md:space-x-8">
+                    <a href="#about" class="text-textMuted hover:text-primary transition-colors font-medium px-2 py-1">About</a>
+                    <a href="#how-it-works" class="text-textMuted hover:text-primary transition-colors font-medium px-2 py-1">How It Works</a>
+                    <a href="#features" class="text-textMuted hover:text-primary transition-colors font-medium px-2 py-1">Why Us</a>
+                    <a href="#community" class="text-textMuted hover:text-primary transition-colors font-medium px-2 py-1">Community</a>
+                    <a href="#success-stories" class="text-textMuted hover:text-primary transition-colors font-medium px-2 py-1">Success Stories</a>
+                    <div class="flex items-center space-x-3 ml-4">
+                        <a href="https://diversion.salesmartly.com/split/whatsapp/fcje5s" class="bg-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white px-4 py-2 rounded-full flex items-center gap-2 transition-all text-sm">
+                            <i class="fa fa-whatsapp"></i>
+                        </a>
+                        <a href="https://diversion.salesmartly.com/split/telegram/fcja4r" class="bg-[#2CA5E0]/20 text-[#2CA5E0] hover:bg-[#2CA5E0] hover:text-white px-4 py-2 rounded-full flex items-center gap-2 transition-all text-sm">
+                            <i class="fa fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-textMuted hover:text-primary p-2">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-24 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="landscape-img-container w-full h-full">
+                <img src="https://n.sinaimg.cn/sinacn10106/683/w690h793/20190727/e2c8-iakuryw6490579.jpg" alt="Beautiful Indian woman in traditional attire" class="full-image">
+            </div>
+            <div class="absolute inset-0 gradient-overlay"></div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-32">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-[clamp(2.5rem,8vw,4.5rem)] font-bold text-white leading-tight text-shadow mb-6 animate-fade-in" style="animation-delay: 0.1s">
+                    Where Hearts Find Their <span class="text-light">Perfect Match</span>
+                </h1>
+                <p class="text-[clamp(1.1rem,3vw,1.5rem)] text-white/90 mb-10 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.3s">
+                    A premium platform for meaningful connections rooted in Indian culture, values, and traditions
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style="animation-delay: 0.5s">
+                    <a href="https://diversion.salesmartly.com/split/whatsapp/fcje5s" class="bg-white text-[#25D366] hover:bg-[#25D366] hover:text-white px-8 py-4 rounded-full flex items-center justify-center gap-3 transition-all text-lg font-medium shadow-lg">
+                        <i class="fa fa-whatsapp text-xl"></i>
+                        <span>Join via WhatsApp</span>
+                    </a>
+                    <a href="https://diversion.salesmartly.com/split/telegram/fcja4r" class="bg-white text-[#2CA5E0] hover:bg-[#2CA5E0] hover:text-white px-8 py-4 rounded-full flex items-center justify-center gap-3 transition-all text-lg font-medium shadow-lg">
+                        <i class="fa fa-telegram text-xl"></i>
+                        <span>Join via Telegram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-accent to-transparent"></div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">Discover Your Perfect Match</h2>
+                <div class="section-divider from-primary to-secondary"></div>
+                <p class="text-textMuted text-lg">Our platform is designed to foster genuine connections that honor Indian traditions while embracing modern relationships</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 lg:gap-10">
+                <div class="bg-light p-8 rounded-xl shadow-md card-hover overflow-hidden">
+                    <div class="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-heart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Cultural Compatibility</h3>
+                    <p class="text-textMuted mb-4">Connect with individuals who share your values, traditions, and understanding of Indian culture – building relationships on a foundation of mutual respect and shared heritage.</p>
+                    <div class="portrait-img-container rounded-lg overflow-hidden mt-6">
+                        <img src="https://tse1.explicit.bing.net/th/id/OIP.rqJ7ejeaeP-6LtgVX8chlgHaJX?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Indian woman celebrating culture" class="full-image img-zoom">
+                    </div>
+                </div>
+                
+                <div class="bg-light p-8 rounded-xl shadow-md card-hover overflow-hidden">
+                    <div class="w-16 h-16 bg-secondary/20 text-secondary rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-globe text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Nationwide Network</h3>
+                    <p class="text-textMuted mb-4">From the Himalayas to Kanyakumari, our curated community spans every corner of India, bringing together diverse personalities and backgrounds.</p>
+                    <div class="portrait-img-container rounded-lg overflow-hidden mt-6">
+                        <img src="https://th.bing.com/th/id/R.994f112368eb2c5e4f1516ed43c23782?rik=3X9DQF5l8ORzRw&riu=http%3a%2f%2fwww.vopox.net%2fwp-content%2fuploads%2f2024%2f12%2f1T648PY10CZ9.png&ehk=kZ%2bZJOYu9gD1Qcp3mEn76hxMI5PV%2bmh7W31u8APbeX4%3d&risl=&pid=ImgRaw&r=0" alt="Indian woman from diverse background" class="full-image img-zoom">
+                    </div>
+                </div>
+                
+                <div class="bg-light p-8 rounded-xl shadow-md card-hover overflow-hidden">
+                    <div class="w-16 h-16 bg-white/10 text-white rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-handshake-o text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Genuine Connections</h3>
+                    <p class="text-textMuted mb-4">Focus on meaningful interactions rather than superficial swiping – fostering relationships that can grow into something beautiful and lasting.</p>
+                    <div class="portrait-img-container rounded-lg overflow-hidden mt-6">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.lefRE-ekFYZ6qjrbFEwGJwHaM9?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Indian woman connecting with others" class="full-image img-zoom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section-padding bg-accent">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">How It Works</h2>
+                <div class="section-divider from-primary to-secondary"></div>
+                <p class="text-textMuted text-lg">A simple, elegant process to find your perfect match</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-4">
+                    <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold shadow-lg">1</div>
+                    <h3 class="text-xl font-semibold mb-3">Join Our Community</h3>
+                    <p class="text-textMuted mb-6">Connect through your preferred messaging platform to become part of our exclusive network</p>
+                    <div class="square-img-container rounded-lg overflow-hidden mx-auto shadow-md">
+                        <img src="https://th.bing.com/th/id/R.eac67dfc6becd9c0935810f00497a2e0?rik=sN273lqyAmbiOQ&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20180307%2f65d9e9481ac740b995890d271f8a253e.jpeg&ehk=Wn7UK%2fH3LdedyyM6lR0sGGIvtPqJWQj3kIAV%2fdWDX4U%3d&risl=&pid=ImgRaw&r=0" alt="Join our community" class="full-image img-zoom">
+                    </div>
+                </div>
+                
+                <div class="text-center p-4">
+                    <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold shadow-lg">2</div>
+                    <h3 class="text-xl font-semibold mb-3">Share Your Story</h3>
+                    <p class="text-textMuted mb-6">Tell us about your background, interests, and what you're seeking in a life partner</p>
+                    <div class="portrait-tall-container rounded-lg overflow-hidden mx-auto shadow-md">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.bexBzlsFQj3Wdv26WefhhAHaM9?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Share your story" class="full-contain-image img-zoom">
+                    </div>
+                </div>
+                
+                <div class="text-center p-4">
+                    <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold shadow-lg">3</div>
+                    <h3 class="text-xl font-semibold mb-3">Discover Matches</h3>
+                    <p class="text-textMuted mb-6">Find compatible individuals who align with your values, interests, and relationship goals</p>
+                    <div class="square-img-container rounded-lg overflow-hidden mx-auto shadow-md">
+                        <img src="https://wallpaperm.cmcm.com/7aa8b83ca0de64f98c0230aa53b362b7.jpg" alt="Discover matches" class="full-image img-zoom">
+                    </div>
+                </div>
+                
+                <div class="text-center p-4">
+                    <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold shadow-lg">4</div>
+                    <h3 class="text-xl font-semibold mb-3">Start Connecting</h3>
+                    <p class="text-textMuted mb-6">Begin conversations and build meaningful relationships at your own pace</p>
+                    <div class="portrait-tall-container rounded-lg overflow-hidden mx-auto shadow-md">
+                        <img src="https://img8.sucaisucai.com/08/62/08962078_1.jpg" alt="Start connecting" class="full-contain-image img-zoom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-padding bg-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">Why Choose Our Platform</h2>
+                <div class="section-divider from-primary to-secondary"></div>
+                <p class="text-textMuted text-lg">We've reimagined dating for the modern Indian, blending tradition with contemporary relationship building</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <ul class="space-y-8">
+                        <li class="flex gap-5">
+                            <div class="mt-1 w-10 h-10 bg-primary/20 text-primary rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Respect for Traditions</h3>
+                                <p class="text-textMuted">Deep understanding of Indian values, family importance, and cultural nuances that form the foundation of lasting relationships</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex gap-5">
+                            <div class="mt-1 w-10 h-10 bg-primary/20 text-primary rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Curated Community</h3>
+                                <p class="text-textMuted">A selective network of like-minded individuals from diverse backgrounds, religions, and regions of India</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex gap-5">
+                            <div class="mt-1 w-10 h-10 bg-primary/20 text-primary rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Compatibility Focus</h3>
+                                <p class="text-textMuted">Emphasis on shared values, life goals, and interests rather than superficial attributes</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex gap-5">
+                            <div class="mt-1 w-10 h-10 bg-primary/20 text-primary rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Elegant Experience</h3>
+                                <p class="text-textMuted">A refined approach to connecting that encourages meaningful conversations and authentic interactions</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="order-1 md:order-2 overflow-hidden rounded-2xl shadow-xl">
+                    <div class="landscape-img-container">
+                        <img src="https://th.bing.com/th/id/R.5665b4239e85deb4740e551a831d5f0d?rik=PFsBYLZttmKTbA&pid=ImgRaw&r=0" alt="Indian woman enjoying life" class="full-image transform hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Gallery Section -->
+    <section id="community" class="section-padding bg-gradient-to-b from-dark to-accent">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">Our Vibrant Community</h2>
+                <div class="section-divider from-primary to-secondary"></div>
+                <p class="text-textMuted text-lg">Meet some of the wonderful people who make our platform special</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-transform duration-500">
+                    <div class="portrait-img-container">
+                        <img src="https://th.bing.com/th/id/R.f838250573e704f071fc6d3955cbb6d?rik=dxvegvspu9AaYQ&riu=http%3a%2f%2fk.sinaimg.cn%2fn%2fsinacn%2f86%2fw720h966%2f20181202%2f649f-hpfycet0629513.jpg%2fw700d1q75cms.jpg%3fby%3dcms_fixed_width&ehk=oB%2b0gXrg89F3oom%2b8hxHFqBKv2Ed0DHB5TsoqxNBabI%3d&risl=&pid=ImgRaw&r=0" alt="Indian community member" class="full-image">
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-transform duration-500">
+                    <div class="landscape-img-container">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.Z8Flvz14O1UcWX-Ci_Y4XgHaLH?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Indian community member" class="full-image">
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-transform duration-500">
+                    <div class="portrait-img-container">
+                        <img src="https://www.mengtang.com/upload/pic/img/202305/24/955cbb6d0a1d98dfda338a851232c050.jpg" alt="Indian community member" class="full-image">
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-transform duration-500">
+                    <div class="square-img-container">
+                        <img src="https://img5.sucaisucai.com/14/59/14259495_1.jpg" alt="Indian community member" class="full-image">
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-transform duration-500">
+                    <div class="portrait-img-container">
+                        <img src="https://n.sinaimg.cn/sinakd20230528ac/152/w1019h1533/20230528/5acd-100d2d249b6c59f32519887697503a0e.jpg" alt="Indian community member" class="full-image">
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md transform hover:scale-105 transition-transform duration-500">
+                    <div class="landscape-img-container">
+                        <img src="https://th.bing.com/th/id/R.b3ea28ac4980eb9a7372c8fbf774b05d?rik=GtPqEBvi9FoSvg&riu=http%3a%2f%2fk.sinaimg.cn%2fn%2fsinacn19%2f430%2fw507h723%2f20181104%2fa893-hnknmqw8545834.jpg%2fw700d1q75cms.jpg&ehk=SgBMXcP%2fy%2bgIP4uv0Qo8UMXCLjkmPhOEM0%2f%2bsBEeFOw%3d&risl=&pid=ImgRaw&r=0" alt="Indian community member" class="full-image">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://diversion.salesmartly.com/split/whatsapp/fcje5s" class="inline-flex items-center gap-2 text-primary font-medium hover:underline">
+                    <span>Join our community</span>
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="success-stories" class="section-padding bg-accent">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">Success Stories</h2>
+                <div class="section-divider from-primary to-secondary"></div>
+                <p class="text-textMuted text-lg">Real connections that have blossomed into beautiful relationships</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-dark/60 backdrop-blur-sm p-8 rounded-xl border border-white/5 card-hover">
+                    <div class="flex items-center mb-6">
+                        <!-- 缩小头像尺寸：从w-14 h-14改为w-12 h-12 -->
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-primary flex-shrink-0 avatar-container">
+                            <img src="https://th.bing.com/th/id/R.47a0ce4aa858b998809af53683abaa91?rik=0ngtDNCnNQIQzg&riu=http%3a%2f%2fwww.vopox.net%2fwp-content%2fuploads%2f2024%2f12%2fOBNJN4619AVC.png&ehk=0tEUlKeXkFQctkzLS%2fBkbIp4lCznN%2fQNlSFdE58h9nU%3d&risl=&pid=ImgRaw&r=0" alt="Priya & Rohan" class="avatar-image">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Priya & Rohan</h4>
+                            <p class="text-textMuted">Mumbai</p>
+                        </div>
+                    </div>
+                    <p class="italic text-white/80">"We connected through this platform and discovered our shared love for classical music and regional cuisine. It's been a beautiful journey of understanding and growth together!"</p>
+                    <div class="mt-6 text-primary">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-dark/60 backdrop-blur-sm p-8 rounded-xl border border-white/5 card-hover">
+                    <div class="flex items-center mb-6">
+                        <!-- 缩小头像尺寸：从w-14 h-14改为w-12 h-12 -->
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-primary flex-shrink-0 avatar-container">
+                            <img src="https://th.bing.com/th/id/R.1be8a91150bf1408630be0d134fc7f47?rik=Wc%2bIPwejM1L0bQ&pid=ImgRaw&r=0" alt="Ankit & Swati" class="avatar-image">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Ankit & Swati</h4>
+                            <p class="text-textMuted">Delhi</p>
+                        </div>
+                    </div>
+                    <p class="italic text-white/80">"What started as a casual conversation turned into a wonderful relationship. We appreciate how this platform focuses on real connections rather than just profiles."</p>
+                    <div class="mt-6 text-primary">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-dark/60 backdrop-blur-sm p-8 rounded-xl border border-white/5 card-hover">
+                    <div class="flex items-center mb-6">
+                        <!-- 缩小头像尺寸：从w-14 h-14改为w-12 h-12 -->
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-primary flex-shrink-0 avatar-container">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.i3zq5W-JDEf8_5mEBumbXQHaJ3?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Vijay & Meera" class="avatar-image">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Vijay & Meera</h4>
+                            <p class="text-textMuted">Bangalore</p>
+                        </div>
+                    </div>
+                    <p class="italic text-white/80">"Coming from different states, we never thought we'd find such perfect compatibility. This platform made it possible to connect beyond geographical boundaries."</p>
+                    <div class="mt-6 text-primary">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-6">Ready to Find Your Connection?</h2>
+            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">Join thousands of Indians who have found meaningful relationships through our exclusive platform</p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="https://diversion.salesmartly.com/split/whatsapp/fcje5s" class="bg-white text-[#25D366] hover:bg-[#25D366] hover:text-white px-10 py-5 rounded-full flex items-center justify-center gap-3 transition-all text-lg font-medium shadow-xl transform hover:-translate-y-1">
+                    <i class="fa fa-whatsapp text-xl"></i>
+                    <span>Join via WhatsApp</span>
+                </a>
+                <a href="https://diversion.salesmartly.com/split/telegram/fcja4r" class="bg-white text-[#2CA5E0] hover:bg-[#2CA5E0] hover:text-white px-10 py-5 rounded-full flex items-center justify-center gap-3 transition-all text-lg font-medium shadow-xl transform hover:-translate-y-1">
+                    <i class="fa fa-telegram text-xl"></i>
+                    <span>Join via Telegram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 导航滚动效果
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.remove('shadow-md');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.add('shadow-md');
+            }
+        });
+
+        // 锚点平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 滚动动画
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div > div:not(.text-center)').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
